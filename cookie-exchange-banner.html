@@ -12,10 +12,11 @@ License for the specific language governing permissions and limitations under
 the License.
 -->
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../paper-material/paper-material.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../arc-icons/arc-icons.html">
+<link rel="import" href="../paper-styles/shadow.html">
+
 <!--
 # cookie-exchange-banner element for ARC
 
@@ -64,6 +65,7 @@ Custom property | Description | Default
 
     h2 {
       @apply(--arc-font-headline);
+      margin-top: 0;
       @apply(--cookie-exchange-banner-title);
     }
 
@@ -84,7 +86,8 @@ Custom property | Description | Default
       @apply(--cookie-exchange-banner-cta-text);
     }
 
-    paper-material {
+    .card {
+      @apply --shadow-elevation-2dp;
       padding: 24px;
       background-color: var(--cookie-exchange-banner-background-color, #FBE9E7);
       max-width: var(--cookie-exchange-banner-max-width, 640px);
@@ -110,7 +113,7 @@ Custom property | Description | Default
       @apply(--action-button-hover);
     }
     </style>
-    <paper-material elevation="1">
+    <div class="card">
       <h2>Missing cookies?</h2>
       <p class="action">Install ARC cookie exchange extension and synchronize cookies between the app and Chrome.</p>
       <p>The app is not able to read cookies set in Chrome browser. If you authenticated yourself in a Chrome tab cookies are not transfered automatically.</p>
@@ -120,7 +123,7 @@ Custom property | Description | Default
           <iron-icon icon="arc:open-in-new"></iron-icon>
         </paper-button>
       </a>
-    </paper-material>
+    </div>
   </template>
   <script>
   Polymer({

@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "polymer": "Polymer/polymer#^1.9.2",
-    "paper-material": "PolymerElements/paper-material#^1.0.7",
     "paper-button": "PolymerElements/paper-button#^1.0.15",
     "iron-icon": "PolymerElements/iron-icon#^1.0.13",
-    "arc-icons": "advanced-rest-client/arc-icons#^1.0.22"
+    "arc-icons": "advanced-rest-client/arc-icons#^1.0.22",
+    "paper-styles": "PolymerElements/paper-styles#<2"
   },
   "devDependencies": {
     "iron-component-page": "polymerelements/iron-component-page#1.0.0",
