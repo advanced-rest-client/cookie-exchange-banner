@@ -16,7 +16,6 @@ the License.
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../arc-icons/arc-icons.html">
 <link rel="import" href="../paper-styles/shadow.html">
-
 <!--
 # cookie-exchange-banner element for ARC
 
@@ -112,6 +111,10 @@ Custom property | Description | Default
     paper-button:hover {
       @apply(--action-button-hover);
     }
+
+    paper-button.cancel-button {
+      background-color: inherit;
+    }
     </style>
     <div class="card">
       <h2>Missing cookies?</h2>
@@ -123,6 +126,7 @@ Custom property | Description | Default
           <iron-icon icon="arc:open-in-new"></iron-icon>
         </paper-button>
       </a>
+      <paper-button class="cancel-button" on-tap="_close">Close</paper-button>
     </div>
   </template>
   <script>
@@ -162,7 +166,20 @@ Custom property | Description | Default
         action: 'Item tap',
         label: 'Cookie Exchange banner link'
       });
+    },
+    // Fires non-bubbling `close` custom event
+    _close: function() {
+      this.fire('close', undefined, {
+        bubbles: false
+      });
     }
+
+    /**
+     * Fired when the user requested to close the message.
+     * The event does not bubbles.
+     *
+     * @event close
+     */
   });
   </script>
 </dom-module>
