@@ -30,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </test-fixture>
 
     <script>
-    /* global fixture, assert */
+    /* global fixture, assert, sinon, MockInteractions */
     suite('basic', function() {
       var element;
       setup(function() {
@@ -40,14 +40,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('Computes URL', function() {
         assert.typeOf(element.extensionUrl, 'string');
       });
-      // This test opens new tab and test can't be finished in Sauce.
-      // test('Fires analytic event', function() {
-      //   var spy = sinon.spy();
-      //   element.addEventListener('send-analytics', spy);
-      //   var button = Polymer.dom(element.root).querySelector('paper-button');
-      //   MockInteractions.tap(button);
-      //   assert.isTrue(spy.called);
-      // });
+
+      test('Fires analytic event', function() {
+        var spy = sinon.spy();
+        element.addEventListener('close', spy);
+        var button = Polymer.dom(element.root).querySelector('.cancel-button');
+        MockInteractions.tap(button);
+        assert.isTrue(spy.called);
+      });
     });
     </script>
 
