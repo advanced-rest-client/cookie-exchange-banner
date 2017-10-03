@@ -34,3 +34,9 @@ Custom property | Description | Default
 `--arc-font-body2` | Theme mixin, font with highlighting | `{}`
 `--arc-font-headline` | Theme mizin, applied to the title | `{}`
 
+
+
+### Events
+| Name | Description | Params |
+| --- | --- | --- |
+| close | Fired when the user requested to close the message. The event does not bubbles. | __none__ |
